@@ -1,1 +1,26 @@
-
+{
+  "name": "muckrock-aggregator",
+  "version": "0.1.0",
+  "title": "MuckRock FOIA Aggregator",
+  "description": "Fetches and aggregates FOIA request data from MuckRock",
+  "icon": "📊",
+  "actorRunOptions": {
+    "memoryMbytes": 1024,
+    "timeoutSecs": 3600
+  },
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "apiToken": {
+        "type": "string",
+        "title": "MuckRock API Token"
+      },
+      "requestIds": {
+        "type": "array",
+        "title": "FOIA Request IDs",
+        "items": { "type": "integer" }
+      }
+    },
+    "required": ["apiToken", "requestIds"]
+  }
+}
